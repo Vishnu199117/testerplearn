@@ -17,5 +17,5 @@ jobs:
         username: AKSERPDEMACR01
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-       docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
-       docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+       docker build . -t akserpdemacr01.azurecr.io/ERP:${{ github.sha }}
+       docker push akserpdemacr01.azurecr.io/ERP:${{ github.sha }}
