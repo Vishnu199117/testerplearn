@@ -12,11 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: azure/docker-login@v2
-       with:
-         login-server: contoso.azurecr.io
-         username: ${{ secrets.REGISTRY_USERNAME }}
-         password: ${{ secrets.REGISTRY_PASSWORD }}
-
-  - run: |
-      docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
-      docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+      with:
+        login-server: akserpdemacr01.azurecr.io
+        username: AKSERPDEMACR01
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    - run: |
+       docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
+       docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
